@@ -1,2 +1,4 @@
-# kubernetes-tutorial
-kubernetes
+## 쿠버네티스와 도커
+
+클라우드상에서 사용되는 
+쿠버네티스, 도커등 기본적인 사용법을 작성 및 정리.
