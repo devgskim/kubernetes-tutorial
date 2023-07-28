@@ -15,15 +15,21 @@ spec:
       containers:
       - name: postgres
         image: postgres:11
-        # image: postgres:12.4-alpine
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5432
+        # env:
+        #   - name: POSTGRES_USER
+        #     value: user01
+        #   - name: POSTGRES_PASSWORD
+        #     value: password
+        #   - name: POSTGRES_DB
+        #     value: testdb        
         envFrom:
           - secretRef:
               name: postgres-secret
-          - configMapRef:
-              name: postgres-configmap
+          # - configMapRef:
+          #     name: postgres-configmap
         volumeMounts:
         - name: postgres-data
           mountPath: /var/lib/pgsql/data

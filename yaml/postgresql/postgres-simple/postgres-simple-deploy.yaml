@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres14
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres14
+  template:
+    metadata:
+      labels:
+        app: postgres14
+    spec:
+      containers:
+      - name: postgres14
+        image: postgres:14.8
+        # image: postgres:12.4-alpine
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5432
+        env:
+          - name: POSTGRES_USER
+            value: user01
+          - name: POSTGRES_PASSWORD
+            value: password
+          - name: POSTGRES_DB
+            value: testdb

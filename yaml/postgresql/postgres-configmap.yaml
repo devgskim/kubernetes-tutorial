@@ -3,4 +3,6 @@ kind: ConfigMap
 metadata:
   name: postgres-configmap
 data:
-  POSTGRES_DB: tstdb
+  POSTGRES_USER: user01
+  POSTGRES_PASSWORD: password
+  POSTGRES_DB: testdb  

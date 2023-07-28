@@ -28,6 +28,11 @@ $ kubectl describe pod {pod name}
 $ kubectl exec {pod name} env
 ```
 
+* pod
+```bash
+$ kubectl get statefulset {statefulset name}
+```
+
 * pv & pvc
 ```bash
 $ kubectl get pv --show-labels
@@ -51,4 +56,23 @@ $ kubectl edit rs {replicaSet name}
 ```bash
 $ kubectl get deploy
 $ kubectl scale deploy/{deploy name} --replicas=0
+$ kubectl delete deploy {deploy name}
+$ kubectl describe deploy {deploy name}
 ```
+
+
+<details><summary>kubectl log</summary>
+<p>
+
+###### 로그 확인
+
+```bash
+$ kubectl logs pod-name
+$ kubectl logs pod-name --since=2h
+$ kubectl logs pod-name --tail=10
+$ kubectl logs my-pod > my-pod-logs.txt
+$ kubectl logs -f pod-name
+```
+
+</p>
+</details>

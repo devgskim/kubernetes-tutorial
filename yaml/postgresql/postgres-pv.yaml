@@ -5,13 +5,14 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: ""
   capacity:
     storage: 1Gi
+  volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce  # 노드 하나에만 읽기쓰기
   # - ReadOnlyMany   # 여러노드에서 읽기 전용
   # - ReadWriteMany  # 여러노드 읽기쓰기 가능
-  # persistentVolumeReclaimPolicy: Retain  # 유지
+  persistentVolumeReclaimPolicy: Delete  # 유지: Retain, 삭제: Delete
   hostPath:
     path: "/mnt/data"

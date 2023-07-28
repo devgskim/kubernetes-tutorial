@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres14-svc
+spec:
+  type: NodePort
+  ports:
+  - port: 5432
+    nodePort: 30310
+  selector:
+    app: postgres14
+
