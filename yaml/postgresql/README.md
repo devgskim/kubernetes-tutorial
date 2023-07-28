@@ -27,8 +27,8 @@ hello
 
 * secrets
 ```bash
-$ echo -n ‘username' > ./username.txt
-$ echo -n ‘password' > ./password.txt
+$ echo -n 'username' > ./username.txt
+$ echo -n 'password' > ./password.txt
 $ kubectl create secret generic user-pass-secret --from-file=./username.txt --from-file=./password.txt
 
 $ kubectl get secret user-pass-secret -o yaml
